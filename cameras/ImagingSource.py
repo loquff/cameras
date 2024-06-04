@@ -24,7 +24,7 @@ except:
         Check https://github.com/TheImagingSource/IC-Imaging-Control-Samples/tree/master/Python/Python%20NET for more information.
         """))
 
-from AbstractCamera import Camera
+from cameras.AbstractCamera import Camera
 import ctypes as C
 import numpy as np
 

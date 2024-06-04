@@ -1,10 +1,10 @@
 try:
     from ximea import xiapi
 except ModuleNotFoundError:
-    raise ImportError("""There seems to be a problem with the instalation of the Ximea software. \n
-                      Check https://www.ximea.com/support/wiki/apis/APIs for details.""")
+    """There seems to be a problem with the instalation of the Ximea software. \n
+                      Check https://www.ximea.com/support/wiki/apis/APIs for details."""
 
-from AbstractCamera import Camera
+from cameras.AbstractCamera import Camera
 
 class XimeaCamera(Camera):
     def __init__(self):
