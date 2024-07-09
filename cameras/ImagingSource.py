@@ -30,8 +30,8 @@ import numpy as np
 
 
 class ImagingSourceCamera(Camera):
-    def __init__(self, resX, resY):
-        super().__init__(resX, resY)
+    def __init__(self):
+        super().__init__()
         self.imaging_control = TIS.Imaging.ICImagingControl()
 
         # Create the sink for snapping images on demand.
