@@ -4,10 +4,10 @@ except ModuleNotFoundError:
     print("Could not find library imagingcontrol4. The user should install it. It is avaliable through pip. The documentation can be found in https://www.theimagingsource.com/en-us/documentation/ic4python/programmers-guide.html")
 
 from cameras.AbstractCamera import Camera
+ic4.Library.init()
 
 class ImagingSourceCamera(Camera):
     def __init__(self, device_id:int=0):
-        ic4.Library.init()
         self.grabber = ic4.Grabber()
         device_info = ic4.DeviceEnum.devices()[device_id]
         self.grabber.device_open(device_info)
@@ -16,7 +16,7 @@ class ImagingSourceCamera(Camera):
 
     def capture(self, roi=None, timeout=1000):
         try:
-            image = self.sink.snap_single(timeout).numpy_wrap()
+            image = self.sink.snap_single(timeout).numpy_wrap().copy()
 
         except ic4.IC4Exception as ex:
             print(ex.message)
