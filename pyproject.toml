@@ -1,15 +1,10 @@
-[tool.poetry]
+[project]
 name = "cameras"
 version = "0.1.0"
-description = ""
-authors = ["Marcos Gil <marcosgildeoliveira@gmail.com>"]
+description = "Add your description here"
 readme = "README.md"
-
-[tool.poetry.dependencies]
-python = "^3.7"
-numpy = ">=1.21,<3"
-
-
-[build-system]
-requires = ["poetry-core"]
-build-backend = "poetry.core.masonry.api"
+requires-python = ">=3.9"
+dependencies = [
+    "numpy>=1.20.0",
+    "pyside6>=6.0.0",
+]
