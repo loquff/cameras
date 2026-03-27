@@ -3,8 +3,18 @@ name = "cameras"
 version = "0.1.0"
 description = "Add your description here"
 readme = "README.md"
-requires-python = ">=3.9"
+requires-python = ">=3.10"
 dependencies = [
     "numpy>=1.20.0",
     "pyside6>=6.0.0",
+]
+
+[project.optional-dependencies]
+ids = [
+    "ids-peak>=1.11.1.0.5",
+    "ids-peak-common>=1.2.0.3597",
+    "ids-peak-icv>=1.2.0.8072",
+]
+thorlabs = [
+    "pylablib-lightweight>=1.4.3",
 ]
