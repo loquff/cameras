@@ -139,7 +139,7 @@ class Camera(ABC):
                 # Capture frame from camera
                 frame = self.capture()
                 if roi is not None:
-                    frame = frame[roi[0]:roi[1], roi[2]:roi[3]]
+                    frame = frame[roi[0]:roi[1], roi[2]:roi[3]].copy()
 
                 # Convert numpy array to QImage
                 if len(frame.shape) == 2:  # Grayscale
