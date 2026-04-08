@@ -22,7 +22,7 @@ class Camera(ABC):
     def close(self):
         pass
 
-    def show_live_feed(self, window_title="Camera Feed", fps=30):
+    def show_live_feed(self, window_title="Camera Feed", fps=30, roi=None):
         """
         Display a live feed from the camera in a Qt window.
 
@@ -138,6 +138,8 @@ class Camera(ABC):
             try:
                 # Capture frame from camera
                 frame = self.capture()
+                if roi is not None:
+                    frame = frame[roi[0]:roi[1], roi[2]:roi[3]]
 
                 # Convert numpy array to QImage
                 if len(frame.shape) == 2:  # Grayscale
