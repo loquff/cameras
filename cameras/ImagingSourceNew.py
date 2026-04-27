@@ -21,6 +21,9 @@ class ImagingSourceCamera(Camera):
         except ic4.IC4Exception as ex:
             print(ex.message)
 
+        if image.ndims == 3:
+            images = images[:,:,0]
+
         if roi is None:
             return image
         else:
