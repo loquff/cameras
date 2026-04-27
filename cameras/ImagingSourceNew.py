@@ -22,7 +22,7 @@ class ImagingSourceCamera(Camera):
             print(ex.message)
 
         if image.ndim == 3:
-            images = images[:,:,0]
+            image = image[:,:,0]
 
         if roi is None:
             return image
